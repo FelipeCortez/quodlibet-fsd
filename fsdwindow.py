@@ -81,8 +81,9 @@ class FSDWindow(Gtk.Window):
         self.title_layout = layout
 
         rect = namedtuple("Rect", ["x", "y", "width", "height"])
+
         rect.x = 350
-        rect.y = 350
+        rect.y = (mgeo.height - coverheight) // 2
         rect.width = coverwidth
         rect.height = coverheight
 
@@ -149,7 +150,7 @@ class FSDWindow(Gtk.Window):
 
         if self.cover_surface is not None:
             rect = self.cover_rectangle
-            textx += rect.width + 350
+            textx += rect.width + 350 + self.MARGIN
             surface = self.cover_surface
             transmat = cairo.Matrix()
 
