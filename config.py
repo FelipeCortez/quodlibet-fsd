@@ -13,13 +13,11 @@ from quodlibet.plugins import (PluginConfig, ConfProp, IntConfProp,
     FloatConfProp, ColorConfProp)
 
 
-DEFAULT_PATTERN = (r"<album|<album><part| - <part>><tracknumber| · <tracknumber>>> [span weight='bold' size='large']<title>[/span] <version|[small][i]<version>[/i][/small]> <~people|by <~people>> # <album|<album><part| - <part>><tracknumber| · <tracknumber>>>")
-
-
-# <album|<album><part| - <part>><tracknumber| · <tracknumber>>>
-# [span weight='bold' size='large']<title>[/span] <version|[small][i]<version>[/i][/small]>
-# <~people|by <~people>>
-
+DEFAULT_PATTERN = "\n".join((
+    "<album|<album><part| - <part>><tracknumber| · <tracknumber>>>",
+    "[span weight='bold' size='large']<title>[/span]",
+    "<albumartist|<albumartist>|<artist|<artist>|No artist>>")
+)
 
 def get_config(prefix):
     class FSDConfig:
