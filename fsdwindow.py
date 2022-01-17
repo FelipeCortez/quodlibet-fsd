@@ -29,7 +29,7 @@ from quodlibet import pattern
 
 class FSDWindow(Gtk.Window):
 
-    MARGIN = 50
+    MARGIN = 80
     """never any closer to the screen edge than this"""
 
     BORDER = 100
@@ -142,7 +142,7 @@ class FSDWindow(Gtk.Window):
         """)
 
         cr.set_operator(cairo.OPERATOR_OVER)
-        cr.set_source_rgba(*self.conf.fill)
+        cr.set_source_rgba(0, 0, 0, 1.0)
         self.draw_conf_rect(cr, 0, 0, self.get_size()[0], self.get_size()[1])
         cr.fill()
 
@@ -170,7 +170,7 @@ class FSDWindow(Gtk.Window):
         height = self.title_layout.get_pixel_size()[1]
         texty = (self.get_size()[1] - height) // 2
 
-        cr.set_source_rgb(*self.conf.text[:3])
+        cr.set_source_rgb(1, 1, 1)
         cr.move_to(textx, texty)
         PangoCairo.show_layout(cr, self.title_layout)
         cr.restore()

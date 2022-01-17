@@ -26,16 +26,7 @@ def get_config(prefix):
 
         font = ConfProp(plugin_conf, "font", "Sans 22")
         string = ConfProp(plugin_conf, "string", DEFAULT_PATTERN)
-        pos_x = FloatConfProp(plugin_conf, "pos_x", 0.5)
-        pos_y = FloatConfProp(plugin_conf, "pos_y", 0.0)
-        corners = IntConfProp(plugin_conf, "corners", 1)
-        delay = IntConfProp(plugin_conf, "delay", 2500)
         monitor = IntConfProp(plugin_conf, "monitor", 0)
-        align = IntConfProp(plugin_conf, "align", 1)
-        coversize = IntConfProp(plugin_conf, "coversize", 120)
-        text = ColorConfProp(plugin_conf, "text", (0.9, 0.9, 0.9, 0.0))
-        outline = ColorConfProp(plugin_conf, "outline", (-1.0, 0.0, 0.0, 0.2))
-        shadow = ColorConfProp(plugin_conf, "shadow", (-1.0, 0.0, 0.0, 0.1))
-        fill = ColorConfProp(plugin_conf, "fill", (0.25, 0.25, 0.25, 0.5))
+        coversize = IntConfProp(plugin_conf, "coversize", 400)
 
     return FSDConfig()
