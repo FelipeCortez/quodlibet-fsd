@@ -174,3 +174,5 @@ class FSDWindow(Gtk.Window):
         cr.move_to(textx, texty)
         PangoCairo.show_layout(cr, self.title_layout)
         cr.restore()
+
+        self.get_window().set_cursor(Gdk.Cursor.new(Gdk.CursorType.BLANK_CURSOR))
