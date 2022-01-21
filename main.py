@@ -12,7 +12,7 @@
 
 from gi.repository import Gdk, GLib
 
-from quodlibet import _
+from quodlibet import _, app
 from quodlibet.plugins.events import EventPlugin
 from quodlibet.qltk import Icons
 from quodlibet.util import cached_property
@@ -43,7 +43,7 @@ class FSD(EventPlugin):
             self.__current_window.hide()
             self.__current_window.destroy()
 
-        if song is None:
+        if song is None or app.player.paused:
             self.__current_window = None
             return
 
